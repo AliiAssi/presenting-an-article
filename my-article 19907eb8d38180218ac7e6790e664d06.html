@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>my-article</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="19907eb8-d381-8021-8ac7-e6790e664d06" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">✏️</span></div><h1 class="page-title">my-article</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@February 13, 2025 5:33 PM</time></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Last edited time</th><td><time>@February 14, 2025 5:16 PM</time></td></tr></tbody></table></header><div class="page-body"><ul id="19907eb8-d381-80c7-8046-f44d9eff3b39" class="toggle"><li><details open=""><summary>problem statement</summary><ul id="19907eb8-d381-804d-9c2a-f1f98e6aeeae" class="bulleted-list"><li style="list-style-type:disc">organizations struggle answering the 2 questions(they don’t answer these several questions):<ul id="19907eb8-d381-8039-913d-da2cd625c474" class="bulleted-list"><li style="list-style-type:circle">how much security risk the organization faces (what is their estimated risk exposure)</li></ul><ul id="19907eb8-d381-80bd-8035-e5326063e52f" class="bulleted-list"><li style="list-style-type:circle">how their security system compares to others (how does their security compare with peers?)</li></ul></li></ul><ul id="19907eb8-d381-80a2-8c85-d692bba6d5c5" class="bulleted-list"><li style="list-style-type:disc">they don’t answer these several questions due to their sensitive aspects while sharing them and  since organizations are unwilling to share their cybersecurity weaknesses</li></ul><ul id="19907eb8-d381-80d5-808c-d4bcee987c0a" class="bulleted-list"><li style="list-style-type:disc">they don’t have a framework to evaluate their system, they don’t have a real loss data</li></ul><ul id="19907eb8-d381-806a-9637-e4eb77dec902" class="bulleted-list"><li style="list-style-type:disc">they don’t know how often attacks happen or how severe they are within their sector.</li></ul><ul id="19907eb8-d381-809e-9617-f8b461bdc567" class="bulleted-list"><li style="list-style-type:disc">specially in many countries they must assess and report cyber risks</li></ul><ul id="19907eb8-d381-800f-8a5c-edccd234c360" class="bulleted-list"><li style="list-style-type:disc">so how they evaluate their security system in a reliable way</li></ul></details></li></ul><ul id="19907eb8-d381-8027-85aa-de183fdd559a" class="toggle"><li><details open=""><summary>contribution</summary><ul id="19907eb8-d381-802c-896d-c50e3aab16d2" class="bulleted-list"><li style="list-style-type:disc">a SECURE framework that uses PETs</li></ul><ul id="19907eb8-d381-809e-89a5-ca4af304fe59" class="bulleted-list"><li style="list-style-type:disc">Since <strong>detailed individual data is not available</strong>, the framework must work with <strong>high-level aggregated metrics</strong>, making <strong>the right modeling approach crucial</strong>.</li></ul><ul id="19907eb8-d381-80a1-bc3b-e1f27def5dc0" class="bulleted-list"><li style="list-style-type:disc">PETs (Privacy-Enhancing Techniques)  allow aggregated results to be computed from encrypted cyber security aspect → fits a gap</li></ul><ul id="19907eb8-d381-80a5-8f2b-d593d9464732" class="bulleted-list"><li style="list-style-type:disc">one of the key components in this framework, the variable: Defense Gap Index</li></ul><ul id="19907eb8-d381-80e0-8d64-f09e80dbfc24" class="bulleted-list"><li style="list-style-type:disc">calculated by how much the firm deviate from the average security posture (based on historical data)</li></ul><ul id="19907eb8-d381-80ca-8f4e-d2d12ce94761" class="bulleted-list"><li style="list-style-type:disc"> A new metric for quantifying an organization’s security relative to the peers </li></ul></details></li></ul><ul id="19907eb8-d381-80e1-a332-e0224f268674" class="toggle"><li><details open=""><summary>simulation</summary><ul id="19907eb8-d381-80f6-bfa5-cd6673ba7aa6" class="bulleted-list"><li style="list-style-type:disc">25 firms in partnership with an industry ISAO</li></ul></details></li></ul><ul id="19907eb8-d381-80f1-b7e2-f48d20ad3ad3" class="toggle"><li><details open=""><summary>Related Work </summary><ul id="19907eb8-d381-80c4-b7fc-dcfde03c9edf" class="toggle"><li><details open=""><summary>Cyber Risk Modeling</summary><ul id="19907eb8-d381-8015-af3f-d418c3727bee" class="bulleted-list"><li style="list-style-type:disc">1970s–1990s<ul id="19907eb8-d381-8080-bc89-d74642a50559" class="bulleted-list"><li style="list-style-type:circle">Risk in electronic data processing.</li></ul><ul id="19907eb8-d381-80da-bfe4-e17c7f142e42" class="bulleted-list"><li style="list-style-type:circle">seen as an equation without accounting the modern threats</li></ul></li></ul><ul id="19907eb8-d381-80a1-916f-dc7e8d844117" class="bulleted-list"><li style="list-style-type:disc">2000s<ul id="19907eb8-d381-8099-a829-e89d2834577c" class="bulleted-list"><li style="list-style-type:circle"> More reliant on computers </li></ul><ul id="19907eb8-d381-801d-b9fc-eae21bca6a73" class="bulleted-list"><li style="list-style-type:circle">seen as an equation without available data to proceed the modeling</li></ul><ul id="19907eb8-d381-80d2-a8b8-c8269a16e4be" class="bulleted-list"><li style="list-style-type:circle">qualitative </li></ul></li></ul><ul id="19907eb8-d381-80b7-8e43-e3163bd6a9b4" class="bulleted-list"><li style="list-style-type:disc">2010s<ul id="19907eb8-d381-8091-a1ad-f9164899007a" class="bulleted-list"><li style="list-style-type:circle">quantify the risk by <strong>number of lost records</strong>.</li></ul><ul id="19907eb8-d381-80e2-aeb6-d4d0856a2367" class="bulleted-list"><li style="list-style-type:circle">the problem here, different records have different values</li></ul></li></ul><ul id="19907eb8-d381-8013-9e4c-c2d0b9338b4c" class="bulleted-list"><li style="list-style-type:disc">Mid-to-Late 2010s<ul id="19907eb8-d381-806e-ad25-c10ebdbe08d2" class="bulleted-list"><li style="list-style-type:circle">modeling by frameworks</li></ul><ul id="19907eb8-d381-80b0-bb4b-faa711612d00" class="bulleted-list"><li style="list-style-type:circle">quantifying risk rather than qualitative it</li></ul></li></ul><ul id="19907eb8-d381-80ce-b4d6-ec168fea3425" class="bulleted-list"><li style="list-style-type:disc">present<ul id="19907eb8-d381-8084-b93a-ce99eaf40e5b" class="bulleted-list"><li style="list-style-type:circle">Governments are now mandating <strong>cyber risk quantification</strong> for regulatory compliance</li></ul><ul id="19907eb8-d381-809d-b708-fc9ea562aacf" class="bulleted-list"><li style="list-style-type:circle">Organizations <strong>still lack</strong> external cyber risk data</li></ul><ul id="19907eb8-d381-8049-b6cd-e3bff61c9508" class="bulleted-list"><li style="list-style-type:circle">PETs</li></ul></li></ul><hr id="19907eb8-d381-802e-a7dd-dff8a45dc0f6"/><ul id="19907eb8-d381-802f-952c-d4939fdcc134" class="bulleted-list"><li style="list-style-type:disc"><strong>From simple risk equations to structured frameworks</strong> (e.g., FAIR, Monte Carlo simulations).</li></ul><ul id="19907eb8-d381-80a8-933d-c578edd90c38" class="bulleted-list"><li style="list-style-type:disc"><strong>From qualitative risk assessments to quantitative cyber risk estimation.</strong></li></ul><ul id="19907eb8-d381-80a4-91ee-f217b8d2d2c4" class="bulleted-list"><li style="list-style-type:disc"><strong>From individual risk assessments to industry-wide benchmarking efforts.</strong></li></ul><ul id="19907eb8-d381-805f-b69d-d8a95cff93cd" class="bulleted-list"><li style="list-style-type:disc"><strong>From isolated data to secure data aggregation using PETs.</strong></li></ul></details></li></ul><ul id="19907eb8-d381-8017-8572-f398bad98f92" class="toggle"><li><details open=""><summary>Cryptographic computing</summary><ul id="19907eb8-d381-8098-93de-c0fe7c68c8b0" class="bulleted-list"><li style="list-style-type:disc"><strong>From basic encryption to full secure computation techniques (homomorphic encryption).</strong></li></ul><ul id="19907eb8-d381-80ca-9868-f8b003bfb87c" class="bulleted-list"><li style="list-style-type:disc"><strong>From theoretical cryptographic models to real-world applications (SCRAM, private data linking, secure banking).</strong></li></ul><ul id="19907eb8-d381-8051-a949-f77e51e114a6" class="bulleted-list"><li style="list-style-type:disc"><strong>From isolated privacy concerns to MPC (multi-party computation)</strong></li></ul><ul id="19907eb8-d381-8095-90d9-cd1b283e2dd3" class="toggle"><li><details open=""><summary>Explaining MPC</summary><ul id="19907eb8-d381-80e0-9ae9-c87ca17e3e88" class="bulleted-list"><li style="list-style-type:disc"><strong>Multi-party computation (MPC)</strong> is a cryptographic technique that allows multiple parties to <strong>jointly compute a function</strong> over their private inputs <strong>without revealing</strong> those inputs to each other.<p id="19907eb8-d381-8026-a3b6-eb05c200073b" class="">For example, several companies can <strong>securely calculate industry-wide cyber risk metrics</strong> using their private security data <strong>without exposing individual company data</strong>.</p></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="19907eb8-d381-805f-a561-c31004668fd1" class="toggle"><li><details open=""><summary>Experience</summary><ul id="19907eb8-d381-801c-8805-f1b653fbc9c8" class="toggle"><li><details open=""><summary>Why MPC</summary><p id="19907eb8-d381-8054-b882-ff964d6cab79" class="">securely collect and analyze cybersecurity-related data from multiple organizations while keeping individual inputs private</p></details></li></ul><ul id="19907eb8-d381-8038-bf9d-cf82c2d759b7" class="toggle"><li><details open=""><summary>What kind of data is collected</summary><ul id="19907eb8-d381-8070-be1e-eb500e8e7822" class="bulleted-list"><li style="list-style-type:disc">the study collect cyber-security data from 25 firms</li></ul><ul id="19907eb8-d381-80f5-a9ab-e8f738b9481a" class="bulleted-list"><li style="list-style-type:disc">data was about <ul id="19907eb8-d381-80ee-b986-d1ccdc0c48de" class="bulleted-list"><li style="list-style-type:circle"><strong>Security controls </strong>: How well different security measures are implemented</li></ul><ul id="19907eb8-d381-8079-870e-e4e39a1f8ad7" class="bulleted-list"><li style="list-style-type:circle"><strong>Incident counts</strong>: The number of cybersecurity incidents each organization experienced.</li></ul><ul id="19907eb8-d381-8071-b685-c2b3441017e9" class="bulleted-list"><li style="list-style-type:circle"><strong>Control failures</strong>: Which security controls failed and contributed to those incidents.</li></ul><ul id="19907eb8-d381-8080-b041-ee20bb25e7b9" class="bulleted-list"><li style="list-style-type:circle"><strong>Financial losses</strong>: The monetary impact of these incidents.</li></ul></li></ul><ul id="19907eb8-d381-80b9-ba97-c80faf50647e" class="bulleted-list"><li style="list-style-type:disc">how the data collected<ul id="19907eb8-d381-8020-b58f-e41edb2cfdd5" class="bulleted-list"><li style="list-style-type:circle">Each company encrypts its data before sharing it.</li></ul><ul id="19907eb8-d381-8001-ad22-ed899d4a725e" class="bulleted-list"><li style="list-style-type:circle">The system <strong>only</strong> computes totals, averages, and distributions</li></ul><ul id="19907eb8-d381-8020-945e-e135fb5de705" class="bulleted-list"><li style="list-style-type:circle">The final results are decrypted and shared with the group, but no single company&#x27;s data is visible.</li></ul></li></ul><ul id="19907eb8-d381-80bd-bb79-fa3ca029374f" class="bulleted-list"><li style="list-style-type:disc">outcome of the results<ul id="19907eb8-d381-80a8-b0aa-c0ec7a503c39" class="bulleted-list"><li style="list-style-type:circle">different security controls across the industry.</li></ul><ul id="19907eb8-d381-80d3-9ef6-f8c8f1ec7740" class="bulleted-list"><li style="list-style-type:circle"><strong>Total and average incident counts</strong> for the group.</li></ul><ul id="19907eb8-d381-8094-a2da-ff15d6467429" class="bulleted-list"><li style="list-style-type:circle"><strong>Which security controls failed most often</strong>, leading to losses</li></ul><ul id="19907eb8-d381-809a-a53d-e10d3a994da6" class="bulleted-list"><li style="list-style-type:circle"><strong>Total and average financial losses</strong> from cyber incidents.</li></ul><ul id="19907eb8-d381-80ad-afe0-cd9f3d4daa4c" class="bulleted-list"><li style="list-style-type:circle">Distribution of losses</li></ul></li></ul><ul id="19907eb8-d381-806b-a017-e01462557d0b" class="bulleted-list"><li style="list-style-type:disc">why it is important<ul id="19907eb8-d381-8051-868d-fb81f696ac5a" class="bulleted-list"><li style="list-style-type:circle">allows organizations to compare their cybersecurity posture with peers <strong>without</strong> exposing their private data.</li></ul><ul id="19907eb8-d381-8027-b3c3-e35d548d9a9b" class="bulleted-list"><li style="list-style-type:circle"> help companies assess their risks and improve security while ensuring confidentiality.</li></ul></li></ul></details></li></ul></details></li></ul><ul id="19907eb8-d381-80ba-99ab-c64e5002142e" class="toggle"><li><details open=""><summary>Methodology </summary><ul id="19907eb8-d381-805c-ac6e-daee2bc2c67b" class="bulleted-list"><li style="list-style-type:disc">way to estimate a company’s cybersecurity risk</li></ul><ul id="19907eb8-d381-80f8-8df4-d15d7e8909fa" class="toggle"><li><details open=""><summary>Sectoral Risk Modeling Approach 1</summary><ul id="19907eb8-d381-801d-9388-d65a6b84433a" class="bulleted-list"><li style="list-style-type:disc">risk here are modeling by 3 factors: Proba, Impact, Defense Gap Index</li></ul><ul id="19907eb8-d381-8048-b71b-c9ea6742eca1" class="bulleted-list"><li style="list-style-type:disc">formula: R = P * I * G</li></ul><ul id="19907eb8-d381-8083-8b8f-cac16c6a0745" class="bulleted-list"><li style="list-style-type:disc">P based on the <strong>average incident rate</strong> across the industry</li></ul><ul id="19907eb8-d381-8010-8640-c35fd8fd050c" class="bulleted-list"><li style="list-style-type:disc">I  model uses the <strong>average cost of a cyber incident</strong> across the peer group</li></ul><ul id="19907eb8-d381-8061-ace8-eed6d731eaa7" class="bulleted-list"><li style="list-style-type:disc">G is the key innovation in this contribution<ul id="19907eb8-d381-80e0-b02f-e7104b122538" class="bulleted-list"><li style="list-style-type:circle">measures how much a company’s security posture deviates from the industry average.</li></ul><ul id="19907eb8-d381-80f7-bc15-e5fb29d88799" class="bulleted-list"><li style="list-style-type:circle">if the single firm has weaker security than the peer → G = 1 (HIGH RISK)</li></ul><ul id="19907eb8-d381-80ce-ba5c-f8a8d4fc626a" class="bulleted-list"><li style="list-style-type:circle">else G &lt; 1 (LOW RISK)</li></ul><ul id="19907eb8-d381-80c1-8358-e827fbb60705" class="bulleted-list"><li style="list-style-type:circle">G is calculated based on <strong>how much a firm&#x27;s security posture deviates from the industry average</strong>.</li></ul></li></ul><ul id="19907eb8-d381-8058-b04d-efe3497eecaf" class="bulleted-list"><li style="list-style-type:disc">after this method <ul id="19907eb8-d381-8007-9baa-dd20bddd85ca" class="bulleted-list"><li style="list-style-type:circle">answering the first question , calculating the risk, and based on firm data, firms can <strong>estimate their expected loss </strong></li></ul><ul id="19907eb8-d381-801b-b398-c08c2910024f" class="bulleted-list"><li style="list-style-type:circle">answering the second question, by calculating the DGI ,allows firms to <strong>benchmark their security posture</strong> against others in the industry.</li></ul></li></ul></details></li></ul><ul id="19907eb8-d381-8056-be70-d15ce4cb4a30" class="toggle"><li><details open=""><summary>Sectoral Risk Modeling Approach 2</summary><ul id="19907eb8-d381-80c5-a139-d324c20b4563" class="bulleted-list"><li style="list-style-type:disc">answer the question: <strong>How bad could a cyber incident be?</strong></li></ul><ul id="19907eb8-d381-8078-bf11-ee656f738bbb" class="toggle"><li><details open=""><summary>Simulating Cyber Losses with Monte Carlo</summary><ul id="19907eb8-d381-80f7-b2b3-f284f456897f" class="bulleted-list"><li style="list-style-type:disc">Monte Carlo simulations generate thousands of possible cyber loss scenarios based on <strong>real-world data from industry peers</strong>.</li></ul><ul id="19907eb8-d381-804f-bf2a-f06640efae88" class="bulleted-list"><li style="list-style-type:disc">highlights 2 types of risks: rare but high-impact &amp;&amp; frequent but small losses</li></ul><ul id="19907eb8-d381-80ee-b99b-f2653dbdb27d" class="bulleted-list"><li style="list-style-type:disc">each type is modeled separately using <ul id="19907eb8-d381-80c0-bb02-eb520b38b741" class="bulleted-list"><li style="list-style-type:circle">past incidents (historical data)</li></ul><ul id="19907eb8-d381-80e9-8eae-d8d4b91065db" class="bulleted-list"><li style="list-style-type:circle">estimating likely losses (predictions)  </li></ul></li></ul><ul id="19907eb8-d381-802c-aaa6-e185888f210b" class="bulleted-list"><li style="list-style-type:disc">a computer to runs millions of random simulations to predict different cyber loss sinario</li></ul></details></li></ul><ul id="19907eb8-d381-807b-94b2-d4554f65c515" class="toggle"><li><details open=""><summary>Creating a Loss Exceedance Curve</summary><ul id="19907eb8-d381-80b3-bf01-ea5976d88b1a" class="bulleted-list"><li style="list-style-type:disc">kind of regression or a risk-gbt</li></ul><ul id="19907eb8-d381-80d9-bb14-fe604fc93482" class="bulleted-list"><li style="list-style-type:disc">answering the user “How much risk should we prepare for?” or “What’s the chance my company will lose more than $500,000 in a single attack?” </li></ul><ul id="19a07eb8-d381-808f-a0c3-e180a28a6735" class="bulleted-list"><li style="list-style-type:disc">helps companies understand worst-case scenarios.</li></ul><ul id="19a07eb8-d381-80fc-baa5-c819904378fa" class="bulleted-list"><li style="list-style-type:disc">While <strong>Approach 1 (PLG = R)</strong> helps firms compare risk with peers, <strong>Approach 2 (Monte Carlo)</strong> provides a <strong>big-picture view</strong> of <strong>how extreme cyber losses could be</strong> for the entire industry.</li></ul></details></li></ul></details></li></ul><ul id="19907eb8-d381-80ff-a9a7-f77050dcfe79" class="bulleted-list"><li style="list-style-type:disc">The <strong>two approaches are complementary</strong>, meaning they can be used together for a <strong>more complete risk assessment</strong>, but they can also be applied <strong>separately</strong>, depending on the specific problem.</li></ul><ul id="19a07eb8-d381-80f0-8a85-fbee8ef7917f" class="bulleted-list"><li style="list-style-type:disc">if a company wants to understand <strong>its own risk </strong>and compare it with peers →<strong>Use Approach 1 (PLG = R)</strong></li></ul><ul id="19a07eb8-d381-804c-8889-c32d0e2bf99f" class="bulleted-list"><li style="list-style-type:disc">If a company, insurer, or policymaker wants to understand <strong>the probability of extreme losses </strong>→ <strong>Use Approach 2 (Monte Carlo)</strong></li></ul><ul id="19a07eb8-d381-808e-a575-fd971b06ae7c" class="bulleted-list"><li style="list-style-type:disc"> For a <strong>full cyber risk analysis </strong>, using <strong>both approaches together </strong>gives the most <strong>comprehensive </strong>results.</li></ul></details></li></ul><ul id="19a07eb8-d381-8072-918c-c9cbcec7d36f" class="toggle"><li><details open=""><summary>limitations</summary><ul id="19a07eb8-d381-806c-940d-da43c732203e" class="bulleted-list"><li style="list-style-type:disc">Self-reported Data Can Be Inaccurate<ul id="19a07eb8-d381-80c4-a125-c13a1b0191f5" class="bulleted-list"><li style="list-style-type:circle">data used in the secure computations is <strong>self-reported by organizations</strong>, meaning it may contain errors or inconsistencies.</li></ul></li></ul><ul id="19a07eb8-d381-8064-95e2-eae23a3d4fd9" class="bulleted-list"><li style="list-style-type:disc">Defense Gap Index (DGI) Calculation is Approximate<ul id="19a07eb8-d381-8034-8c91-e0a1858b167d" class="bulleted-list"><li style="list-style-type:circle">The <strong>DGI Calculation involves some subjective decisions</strong>, like how much weight to assign to different security controls.</li></ul></li></ul><ul id="19a07eb8-d381-8021-9e6f-ed283a5c8a05" class="bulleted-list"><li style="list-style-type:disc">Limited Number of Participants<ul id="19a07eb8-d381-804c-ba95-f4d31cd5fdf4" class="bulleted-list"><li style="list-style-type:circle"><strong>only 25 firms in one industry</strong>.</li></ul><ul id="19a07eb8-d381-8031-b577-d1e105c4d2b6" class="bulleted-list"><li style="list-style-type:circle">A <strong>larger sample size</strong> would improve accuracy </li></ul></li></ul><ul id="19a07eb8-d381-80d8-a50e-e3cc88610402" class="bulleted-list"><li style="list-style-type:disc">The Model Assumes Similar Threats Across an Industry<ul id="19a07eb8-d381-807b-bd54-f2f09e17e691" class="bulleted-list"><li style="list-style-type:circle">Approach 1 (PLG = R) assumes that <strong>all firms in a sector face similar cyber threats and financial risks</strong>.</li></ul></li></ul><ul id="19a07eb8-d381-80af-8d46-dcd3cb11151b" class="bulleted-list"><li style="list-style-type:disc">Monte Carlo Simulations Use Limited Data<ul id="19a07eb8-d381-8059-955f-e7416d191df5" class="bulleted-list"><li style="list-style-type:circle">Cyber threats <strong>evolve rapidly</strong>, and past incidents may not accurately predict <strong>future attack patterns</strong>.<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></li></ul></li></ul></details></li></ul><ul id="19a07eb8-d381-8044-97e0-effb7704804c" class="toggle"><li><details open=""><summary>Conclusion</summary><ul id="19a07eb8-d381-80ad-837d-f86689b5e999" class="bulleted-list"><li style="list-style-type:disc">The study introduces the <strong>Defense Gap Index (DGI)</strong> as a <strong>new top-level variable</strong> in cyber risk models. It acts as a <strong>multiplier</strong>, increasing or decreasing a firm&#x27;s risk estimate based on its <strong>security maturity relative to peers</strong>.</li></ul><ul id="19a07eb8-d381-80d4-97c4-d859db7eade1" class="bulleted-list"><li style="list-style-type:disc">for better decision make</li></ul><ul id="19a07eb8-d381-80da-9b8a-d2c1e5cfb782" class="bulleted-list"><li style="list-style-type:disc">private and secure way for organizations</li></ul></details></li></ul><ul id="19a07eb8-d381-805d-94c3-cd20af9ac3af" class="toggle"><li><details open=""><summary>Future Work</summary><ul id="19a07eb8-d381-80d4-b870-e62e263d4a05" class="bulleted-list"><li style="list-style-type:disc">Apply the model to additional industries<ul id="19a07eb8-d381-8082-9856-fcfd5a748563" class="bulleted-list"><li style="list-style-type:circle">more than 25 firms</li></ul></li></ul><ul id="19a07eb8-d381-80ec-8608-df4c16ad8d2a" class="bulleted-list"><li style="list-style-type:disc">Refine the Defense Gap Index (DGI) calculation<ul id="19a07eb8-d381-8070-9e9a-fab486b55c71" class="bulleted-list"><li style="list-style-type:circle">use more statistical methods to fine-tune</li></ul></li></ul><ul id="19a07eb8-d381-80ec-85be-cb60c505a85e" class="bulleted-list"><li style="list-style-type:disc">Incorporate real-time cyber threat intelligence</li></ul><ul id="19a07eb8-d381-80f3-bef2-e0225753e8e4" class="bulleted-list"><li style="list-style-type:disc"> Another area for future research would be developing new methods for introducing external data from outside the peer group into the modeling process for the Defense Gap Index.</li></ul></details></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
